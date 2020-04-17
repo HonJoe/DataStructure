@@ -2,25 +2,25 @@ package com.datastructure.queque;
 
 /**
  * 
- * ÀàÃû³Æ: SequenceQueue   
- * ÀàÃèÊö: ¶ÓÁĞË³Ğò½á¹¹               
- * ´´½¨ÈË: zzh         
- * ĞŞ¸ÄÊ±¼ä:2018Äê8ÔÂ5ÈÕ ÏÂÎç4:15:45 
- * ĞŞ¸Ä±¸×¢:
+ * ç±»åç§°: SequenceQueue   
+ * ç±»æè¿°: é˜Ÿåˆ—é¡ºåºç»“æ„               
+ * åˆ›å»ºäºº: zzh         
+ * ä¿®æ”¹æ—¶é—´:2018å¹´8æœˆ5æ—¥ ä¸‹åˆ4:15:45 
+ * ä¿®æ”¹å¤‡æ³¨:
  * @version 1.0.0
  */
 public class SequenceQueue<T> {
 	
 	private Object[] data=null;
-	private int maxSize; //¶ÓÁĞÈİÁ¿
-    private int front;  //¶ÓÁĞÍ·£¬ÔÊĞíÉ¾³ı
-    private int rear;   //¶ÓÁĞÎ²£¬ÔÊĞí²åÈë
+	private int maxSize; //é˜Ÿåˆ—å®¹é‡
+    private int front;  //é˜Ÿåˆ—å¤´ï¼Œå…è®¸åˆ é™¤
+    private int rear;   //é˜Ÿåˆ—å°¾ï¼Œå…è®¸æ’å…¥
     
     /**
-     * ¹¹Ôìº¯Êı£º¸ù¾İ¸ø¶¨µÄsize³õÊ¼»¯Õ»
+     * æ„é€ å‡½æ•°ï¼šæ ¹æ®ç»™å®šçš„sizeåˆå§‹åŒ–æ ˆ
      */
     public SequenceQueue(){
-        this(10);   //Ä¬ÈÏ´óĞ¡Îª10
+        this(10);   //é»˜è®¤å¤§å°ä¸º10
     }
     
     
@@ -30,44 +30,44 @@ public class SequenceQueue<T> {
             data = new Object[initialSize];
             front = rear =0;
         }else{
-            throw new RuntimeException("³õÊ¼»¯´óĞ¡²»ÄÜĞ¡ÓÚ0£º" + initialSize);
+            throw new RuntimeException("åˆå§‹åŒ–å¤§å°ä¸èƒ½å°äº0ï¼š" + initialSize);
         }
 	}
     
-   //ÅĞ¿Õ
+   //åˆ¤ç©º
     public boolean empty(){
         return rear==front?true:false;
     }
     
-  //·µ»Ø¶ÓÊ×ÔªËØ£¬µ«²»É¾³ı
+  //è¿”å›é˜Ÿé¦–å…ƒç´ ï¼Œä½†ä¸åˆ é™¤
     public T peek(){
         if(empty()){
-            throw new RuntimeException("¿Õ¶ÓÁĞÒì³££¡");
+            throw new RuntimeException("ç©ºé˜Ÿåˆ—å¼‚å¸¸ï¼");
         }else{
             return (T) data[front];
         }    
     }
     
-    //²åÈë
+    //æ’å…¥
     public boolean add(T t){
     	int length=length();
     	if (length>=maxSize) {
-    		 throw new RuntimeException("¶ÓÁĞÒÑÂú");
+    		 throw new RuntimeException("é˜Ÿåˆ—å·²æ»¡");
 		}else{
 			data[rear++]=t;
 		}
     	return true;
     }
     
-    //³ö¶Ó
+    //å‡ºé˜Ÿ
     public T pop(){
     	
     	if(empty()){
-            throw new RuntimeException("¿Õ¶ÓÁĞÒì³££¡");
+            throw new RuntimeException("ç©ºé˜Ÿåˆ—å¼‚å¸¸ï¼");
         }
     	
     	T result=(T) data[front];
-    	//ÍùÇ°ÒÆ
+    	//å¾€å‰ç§»
     	for(int i=1;i<=rear;i++){
     		data[i-1]=data[i];
     	}
@@ -75,7 +75,7 @@ public class SequenceQueue<T> {
     	return result;
     }
     
-   //¶ÓÁĞ³¤¶È
+   //é˜Ÿåˆ—é•¿åº¦
     public int length(){
         return rear-front;
     }

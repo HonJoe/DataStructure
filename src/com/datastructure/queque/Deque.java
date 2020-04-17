@@ -3,7 +3,7 @@ package com.datastructure.queque;
 public class Deque {
 	Node head;
     Node tail;
-    //ÉêÃ÷¸Ã±äÁ¿²»»á±»³Ö¾Ã»¯
+    //ç”³æ˜Žè¯¥å˜é‡ä¸ä¼šè¢«æŒä¹…åŒ–
     transient int size=0;
     int data;
     class Node{
@@ -34,7 +34,7 @@ public class Deque {
     }
 
 
-    //Ìí¼ÓÍ·²¿½Úµã(Ö»ÓÐÒ»¸öÔªËØµÄÊ±ºò)
+    //æ·»åŠ å¤´éƒ¨èŠ‚ç‚¹(åªæœ‰ä¸€ä¸ªå…ƒç´ çš„æ—¶å€™)
     public void addHeadNode(int data){
         Node node=new Node(data,null,null);
         head.next=node;
@@ -44,7 +44,7 @@ public class Deque {
         size++;
     }
 
-    //Î²²å·¨
+    //å°¾æ’æ³•
     public void addLast(int data){
         if(head.next==null){
             addHeadNode(data);
@@ -62,7 +62,7 @@ public class Deque {
         }
     }
 
-    //Í·²å·¨
+    //å¤´æ’æ³•
     public void addBegin(int data){
 //        add(0,data);
         if(head.next==null){
@@ -78,14 +78,14 @@ public class Deque {
     }
 
 
-    //¸ù¾ÝË÷Òý£¬É¾³ýÄ³Ò»¸öÁ´±íÔªËØÄÚÈÝ
+    //æ ¹æ®ç´¢å¼•ï¼Œåˆ é™¤æŸä¸€ä¸ªé“¾è¡¨å…ƒç´ å†…å®¹
     public String remove(int index){
         Node temp=head;
         if(index>=size){
-            return "ÏÂ±ê³¬Öµ";
+            return "ä¸‹æ ‡è¶…å€¼";
         }
         for(int i=0;i<size;i++){
-            //²¢·Ç×îºóÒ»¸öÊýÖµ
+            //å¹¶éžæœ€åŽä¸€ä¸ªæ•°å€¼
             if(i==index){
                 temp.next=temp.next.next;
                 temp.next.pre=temp;

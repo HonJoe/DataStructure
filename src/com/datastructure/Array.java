@@ -126,6 +126,16 @@ public class Array<E> {
             remove(index);
     }
 
+    public void swap(int i, int j){
+
+        if(i < 0 || i >= size || j < 0 || j >= size)
+            throw new IllegalArgumentException("Index is illegal.");
+
+        E t = data[i];
+        data[i] = data[j];
+        data[j] = t;
+    }
+
     @Override
     public String toString(){
 
@@ -157,7 +167,6 @@ public class Array<E> {
 	}
 
 	public E getFirst() {
-		// TODO Auto-generated method stub
 		return get(0);
 	}
 }

@@ -4,19 +4,19 @@ package com.datastructure.stack;
 
 /**
  * 
- * ÀàÃû³Æ: LinkStack   
- * ÀàÃèÊö: Õ»Á´Ê½½á¹¹               
- * ´´½¨ÈË: zzh                   
- * ĞŞ¸ÄÊ±¼ä:2018Äê7ÔÂ14ÈÕ ÏÂÎç10:57:22 
- * ĞŞ¸Ä±¸×¢:
+ * ç±»åç§°: LinkStack   
+ * ç±»æè¿°: æ ˆé“¾å¼ç»“æ„               
+ * åˆ›å»ºäºº: zzh                   
+ * ä¿®æ”¹æ—¶é—´:2018å¹´7æœˆ14æ—¥ ä¸‹åˆ10:57:22 
+ * ä¿®æ”¹å¤‡æ³¨:
  * @version 1.0.0
  */
 public class LinkStack<T> {
 
-	private Node<T> top;   //Õ»¶¥ÔªËØ
-    private int size;  //µ±Ç°Õ»´óĞ¡
+	private Node<T> top;   //æ ˆé¡¶å…ƒç´ 
+    private int size;  //å½“å‰æ ˆå¤§å°
     
-	//Á´Õ»µÄ½Úµã
+	//é“¾æ ˆçš„èŠ‚ç‚¹
 	class Node<T>{
 		T t;
 		Node<T> next;
@@ -36,17 +36,17 @@ public class LinkStack<T> {
 		top=null;
 	}
 	
-	//µ±Ç°Õ»´óĞ¡
+	//å½“å‰æ ˆå¤§å°
     public int length(){
         return size;
     }
     
-    //ÅĞ¿Õ
+    //åˆ¤ç©º
     public boolean isEmpty(){
         return size==0;
     }
     
-  //ÈëÕ»£ºÈÃtopÖ¸ÏòĞÂ´´½¨µÄÔªËØ£¬ĞÂÔªËØµÄnextÒıÓÃÖ¸ÏòÔ­À´µÄÕ»¶¥ÔªËØ
+  //å…¥æ ˆï¼šè®©topæŒ‡å‘æ–°åˆ›å»ºçš„å…ƒç´ ï¼Œæ–°å…ƒç´ çš„nextå¼•ç”¨æŒ‡å‘åŸæ¥çš„æ ˆé¡¶å…ƒç´ 
     public boolean push(T t){
         if (isEmpty()) {
 //        	System.out.println("empty");
@@ -60,19 +60,19 @@ public class LinkStack<T> {
         return true;
     }
     
-    //²é¿´Õ»¶¥ÔªËØµ«²»É¾³ı
+    //æŸ¥çœ‹æ ˆé¡¶å…ƒç´ ä½†ä¸åˆ é™¤
     public Node<T> peek(){
         if(isEmpty()){
-            throw new RuntimeException("¿ÕÕ»Òì³££¡");
+            throw new RuntimeException("ç©ºæ ˆå¼‚å¸¸ï¼");
         }else{
             return top;
         }
     }
     
-  //³öÕ»
+  //å‡ºæ ˆ
     public Node<T> pop(){
     	if(isEmpty()){
-            throw new RuntimeException("¿ÕÕ»Òì³££¡");
+            throw new RuntimeException("ç©ºæ ˆå¼‚å¸¸ï¼");
         }else{
         	Node oldTop=top;
         	top=top.next;

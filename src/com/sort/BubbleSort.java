@@ -1,12 +1,12 @@
 package com.sort;
 /**
- * Ã°ÅİÅÅĞòÊÇŒ¢±Èİ^´óµÄ”µ×Ö³ÁÔÚ×îÏÂÃæ£¬½ÏĞ¡µÄ¸¡ÔÚÉÏÃæ
- * ÀàÃû³Æ: BubbleSort   
- * ÀàÃèÊö:                
- * ´´½¨ÈË: zzw            
- * ĞŞ¸ÄÈË: lenovo        
- * ĞŞ¸ÄÊ±¼ä:2018Äê6ÔÂ8ÈÕ ÏÂÎç9:47:48 
- * ĞŞ¸Ä±¸×¢:
+ * å†’æ³¡æ’åºæ˜¯å°‡æ¯”è¼ƒå¤§çš„æ•¸å­—æ²‰åœ¨æœ€ä¸‹é¢ï¼Œè¾ƒå°çš„æµ®åœ¨ä¸Šé¢
+ * ç±»åç§°: BubbleSort   
+ * ç±»æè¿°:                
+ * åˆ›å»ºäºº: zzh
+ * ä¿®æ”¹äºº: lenovo        
+ * ä¿®æ”¹æ—¶é—´:2018å¹´6æœˆ8æ—¥ ä¸‹åˆ9:47:48 
+ * ä¿®æ”¹å¤‡æ³¨:
  * @version 1.0.0
  */
 public class BubbleSort {
@@ -22,11 +22,11 @@ public class BubbleSort {
 			}
 		}
 	}
-	//ÓÅ»¯°æ
+	//ä¼˜åŒ–ç‰ˆ
 	public static void sort2(int[] num){
 		int temp=0;
 		boolean flag=true;
-		for (int i = 0; i < num.length-1&&flag; i++) {	//ÈôflagÎªfalseÖ¤Ã÷ÒÑ¾­ÅÅºÃĞò
+		for (int i = 0; i < num.length-1&&flag; i++) {	//è‹¥flagä¸ºfalseè¯æ˜å·²ç»æ’å¥½åº
 			flag=false;
 			for (int j = num.length-1; j >i; j--) {
 				if (num[j]<num[j-1]) {

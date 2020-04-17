@@ -4,18 +4,18 @@ package com.datastructure.queque;
 
 /**
  * 
- * ÀàÃû³Æ: LinkQueque   
- * ÀàÃèÊö: ¶ÓÁĞÁ´Ê½½á¹¹             
- * ´´½¨ÈË: zzh       
- * ĞŞ¸ÄÊ±¼ä:2018Äê7ÔÂ21ÈÕ ÏÂÎç1:50:02 
- * ĞŞ¸Ä±¸×¢:
+ * ç±»åç§°: LinkQueque   
+ * ç±»æè¿°: é˜Ÿåˆ—é“¾å¼ç»“æ„             
+ * åˆ›å»ºäºº: zzh       
+ * ä¿®æ”¹æ—¶é—´:2018å¹´7æœˆ21æ—¥ ä¸‹åˆ1:50:02 
+ * ä¿®æ”¹å¤‡æ³¨:
  * @version 1.0.0
  */
 public class LinkQueue<T> {
 	
-	private Node front;// ¶ÓÁĞÍ·£¬ÔÊĞíÉ¾³ı  
-    private Node rear;// ¶ÓÁĞÎ²£¬ÔÊĞí²åÈë  
-    private int size=0; //¶ÓÁĞµ±Ç°³¤¶È 
+	private Node front;// é˜Ÿåˆ—å¤´ï¼Œå…è®¸åˆ é™¤  
+    private Node rear;// é˜Ÿåˆ—å°¾ï¼Œå…è®¸æ’å…¥  
+    private int size=0; //é˜Ÿåˆ—å½“å‰é•¿åº¦ 
     
 	class Node{
 		T data;
@@ -40,21 +40,21 @@ public class LinkQueue<T> {
         size++;
     }
 	
-	//ÅĞ¿Õ
+	//åˆ¤ç©º
     public boolean isEmpty(){
         return size==0;
     }
     
-  //·µ»Ø¶ÓÊ×ÔªËØ£¬µ«²»É¾³ı
+  //è¿”å›é˜Ÿé¦–å…ƒç´ ï¼Œä½†ä¸åˆ é™¤
     public Node peek(){
         if(isEmpty()){
-            throw new RuntimeException("¿Õ¶ÓÁĞÒì³££¡");
+            throw new RuntimeException("ç©ºé˜Ÿåˆ—å¼‚å¸¸ï¼");
         }else{
             return front;
         }
     }
     
-    //Èë¶Ó
+    //å…¥é˜Ÿ
     public void add(T data){
     	Node newNode=new Node(data);
     	if (isEmpty()){
@@ -62,24 +62,24 @@ public class LinkQueue<T> {
 			rear=front;			
 		}else{
 			Node oldRear=rear;
-			rear.next=newNode;//ÈÃÎ²½ÚµãµÄnextÖ¸ÏòĞÂÔöµÄ½Úµã
-			rear=newNode;//ÒÔĞÂ½Úµã×÷ÎªĞÂµÄÎ²½Úµã
+			rear.next=newNode;//è®©å°¾èŠ‚ç‚¹çš„nextæŒ‡å‘æ–°å¢çš„èŠ‚ç‚¹
+			rear=newNode;//ä»¥æ–°èŠ‚ç‚¹ä½œä¸ºæ–°çš„å°¾èŠ‚ç‚¹
 		}
     	size++;
     }
     
-    //³ö¶Ó
+    //å‡ºé˜Ÿ
     public Node push(){
     	if (isEmpty()) {
-            throw new RuntimeException("¶ÓÁĞÒÑÎª¿Õ");
+            throw new RuntimeException("é˜Ÿåˆ—å·²ä¸ºç©º");
 		}
-    	Node first=front;//µÃµ½¶ÓÁĞÍ·ÔªËØ
-    	front=front.next;//ÈÃfrontÒıÓÃÖ¸ÏòÔ­¶ÓÁĞÍ·ÔªËØµÄÏÂÒ»¸öÔªËØ
-    	first.next=null;//ÊÍ·ÅÔ­¶ÓÁĞÍ·ÔªËØµÄnextÒıÓÃ
+    	Node first=front;//å¾—åˆ°é˜Ÿåˆ—å¤´å…ƒç´ 
+    	front=front.next;//è®©frontå¼•ç”¨æŒ‡å‘åŸé˜Ÿåˆ—å¤´å…ƒç´ çš„ä¸‹ä¸€ä¸ªå…ƒç´ 
+    	first.next=null;//é‡Šæ”¾åŸé˜Ÿåˆ—å¤´å…ƒç´ çš„nextå¼•ç”¨
     	size--;
     	return first;
     }
-  //¶ÓÁĞ³¤¶È
+  //é˜Ÿåˆ—é•¿åº¦
     public int length(){
         return size;
     }

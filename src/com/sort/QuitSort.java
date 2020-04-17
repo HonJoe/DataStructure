@@ -1,14 +1,14 @@
 package com.sort;
 /**
  * 
- * ������: QuitSort   
- * ������:                
- * ������: zzh           
- * �޸���: lenovo        
- * �޸�ʱ��:2018��6��21�� ����4:40:23 
- * �޸ı�ע:
- * ����˼�룺ͨ��һ�����򽫴��ż�¼�ָ�ɶ����������֣�����һ���ּ�¼�Ĺؼ��־�����һ���ֵĹؼ���С��
- * ��ɷֱ���������ּ�¼�������������Դﵽ�������������Ŀ��
+ * 类名称: QuitSort   
+ * 类描述:                
+ * 创建人: zzh           
+ * 修改人: lenovo        
+ * 修改时间:2018年6月21日 下午4:40:23 
+ * 修改备注:
+ * 基本思想：通过一趟排序将待排记录分割成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，
+ * 则可分别对这两部分记录继续进行排序，以达到整个序列有序的目的
  * @version 1.0.0
  */
 
@@ -17,20 +17,20 @@ public class QuitSort {
 		quitSort(a, 0, a.length-1);
 	}
 	private static void quitSort(int[] a,int l,int h) {
-		int low=l,high=h;	//���λ��ֵĵ͡��߶�ָ��
-		int temp=a[low];	//�ݴ�����Ԫ��
-		while (low<high) {	//���ҵ�����ұ�����С��Ԫ��
+		int low=l,high=h;	//本次划分的低、高端指针
+		int temp=a[low];	//暂存枢轴元素
+		while (low<high) {	//从右到左查找比枢轴小的元素
 			while (low<high&&a[high]>=temp) {
 				high--;				
 			}
-			a[low]=a[high];	//��С���������С��������
+			a[low]=a[high];	//将小数放在左侧小数序列中
 			while (low<high&&a[low]<temp) {
 				low++;
 			}
-			a[high]=a[low];	//�����������Ҳ����������			
-		}//ѭ������ʱlow��high�غ�
+			a[high]=a[low];	//将大数放在右侧大数序列中			
+		}//循环结束时low、high重合
 		
-		a[low]=temp;//ȷ����������մ��λ��
+		a[low]=temp;//确定枢轴的最终存放位置
 		if (l<high-1) {
 			quitSort(a, l, high-1);
 		}

@@ -4,15 +4,15 @@ package com.sort;
 
 /**
  * 
- * ÀàÃû³Æ: MergingSort   
- * ÀàÃèÊö:                
- * ´´½¨ÈË: zzh            
- * ÐÞ¸ÄÈË: lenovo        
- * ÐÞ¸ÄÊ±¼ä:2018Äê6ÔÂ21ÈÕ ÉÏÎç11:29:14 
- * ÐÞ¸Ä±¸×¢:
- * Ô­Àí£º¼ÙÉè³õÊ¼ÐòÁÐº¬ÓÐn¸ö¼ÇÂ¼£¬Ôò¿ÉÒÔ¿´³ÉÊÇn¸öÓÐÐòµÄ×ÓÐòÁÐ£¬Ã¿¸ö×ÓÐòÁÐµÄ³¤¶ÈÎª1£¬È»ºóÁ½Á½¹é²¢
- * µÃµ½¡¾n/2¡¿¸öÓÐÐò×ÓÐòÁÐ£¬Ã¿¸ö×ÓÐòÁÐ³¤¶ÈÎª1£»ÔÙÁ½Á½¹é²¢...Èç´ËÖØ¸´Ö±ÖÁµÃµ½Ò»¸ö³¤¶ÈÎªnµÄÓÐÐòÐò
- * ÁÐÎªÖ¹£¬ÕâÖÖÅÅÐòÓÖ³Æ2Â·¹é²¢ÅÅÐò
+ * ç±»åç§°: MergingSort   
+ * ç±»æè¿°:                
+ * åˆ›å»ºäºº: zzh            
+ * ä¿®æ”¹äºº: lenovo        
+ * ä¿®æ”¹æ—¶é—´:2018å¹´6æœˆ21æ—¥ ä¸Šåˆ11:29:14 
+ * ä¿®æ”¹å¤‡æ³¨:
+ * åŽŸç†ï¼šå‡è®¾åˆå§‹åºåˆ—å«æœ‰nä¸ªè®°å½•ï¼Œåˆ™å¯ä»¥çœ‹æˆæ˜¯nä¸ªæœ‰åºçš„å­åºåˆ—ï¼Œæ¯ä¸ªå­åºåˆ—çš„é•¿åº¦ä¸º1ï¼Œç„¶åŽä¸¤ä¸¤å½’å¹¶
+ * å¾—åˆ°ã€n/2ã€‘ä¸ªæœ‰åºå­åºåˆ—ï¼Œæ¯ä¸ªå­åºåˆ—é•¿åº¦ä¸º1ï¼›å†ä¸¤ä¸¤å½’å¹¶...å¦‚æ­¤é‡å¤ç›´è‡³å¾—åˆ°ä¸€ä¸ªé•¿åº¦ä¸ºnçš„æœ‰åºåº
+ * åˆ—ä¸ºæ­¢ï¼Œè¿™ç§æŽ’åºåˆç§°2è·¯å½’å¹¶æŽ’åº
  * @version 1.0.0
  */
 public class MergingSort {
@@ -27,13 +27,13 @@ public class MergingSort {
 //		mergeSort2(array, 0, array.length-1);
 	}
 	
-	//µÝ¹éÊµÏÖ
+	//é€’å½’å®žçŽ°
 	private static void mergeSort1(int[] data,int low,int high){
-		if (low<high) {//ÏÂ±ê²»µÈÊ±½øÐÐµÝ¹é
-			int half=(low+high)/2;	//½«Êý×éÆ½·ÖÎªA[low,half]ºÍB[half+1,high]
+		if (low<high) {//ä¸‹æ ‡ä¸ç­‰æ—¶è¿›è¡Œé€’å½’
+			int half=(low+high)/2;	//å°†æ•°ç»„å¹³åˆ†ä¸ºA[low,half]å’ŒB[half+1,high]
 			mergeSort1(data, low, half);
 			mergeSort1(data, half+1, high);
-			merge(data,low,high);//¹é²¢
+			merge(data,low,high);//å½’å¹¶
 		}
 	}
 	
@@ -46,9 +46,9 @@ public class MergingSort {
         int i= low;
         int j = mid+1;
         int k = 0;
-		//×ÓÐòÁÐ¶¼ÎªÓÐÐòÐòÁÐ
+		//å­åºåˆ—éƒ½ä¸ºæœ‰åºåºåˆ—
         
-        //°Ñ½ÏÐ¡µÄÊýÏÈÒÆµ½ÐÂÊý×é
+        //æŠŠè¾ƒå°çš„æ•°å…ˆç§»åˆ°æ–°æ•°ç»„
         while(i<=mid&&j<=high){
         	if (a[i]<a[j]) {
 				temp[k++]=a[i++];
@@ -57,25 +57,25 @@ public class MergingSort {
 			}
         }
         
-        //°Ñ×ó±ßÊ£ÓàµÄÊýÒÆÈëÊý×é
+        //æŠŠå·¦è¾¹å‰©ä½™çš„æ•°ç§»å…¥æ•°ç»„
         while (i<=mid) {
 			temp[k++]=a[i++];
 			
 		}
         
-        // °ÑÓÒ±ß±ßÊ£ÓàµÄÊýÒÆÈëÊý×é
+        // æŠŠå³è¾¹è¾¹å‰©ä½™çš„æ•°ç§»å…¥æ•°ç»„
         while(j<=high){
             temp[k++] = a[j++];
         }
         
-        //¸³Öµ¸øa
+        //èµ‹å€¼ç»™a
         for(int x=0;x<temp.length;x++){
         	a[low+x]=temp[x];
         }
 	}
 	
 	
-	//·ÇµÝ¹éÊµÏÖ
+	//éžé€’å½’å®žçŽ°
 	 public static void sort2(int[] a){
 	        int len = 1;
 	        while(len < a.length){
@@ -88,9 +88,9 @@ public class MergingSort {
 
 	    private static void merge2(int[] a, int i, int len){
 	        int start = i;
-	        int len_i = i + len;//¹é²¢µÄÇ°°ë²¿·ÖÊý×é
+	        int len_i = i + len;//å½’å¹¶çš„å‰åŠéƒ¨åˆ†æ•°ç»„
 	        int j = i + len;
-	        int len_j = j +len;//¹é²¢µÄºó°ë²¿·ÖÊý×é
+	        int len_j = j +len;//å½’å¹¶çš„åŽåŠéƒ¨åˆ†æ•°ç»„
 	        int[] temp = new int[2*len];
 	        int count = 0;
 	        while(i < len_i && j < len_j && j < a.length){
@@ -101,7 +101,7 @@ public class MergingSort {
 	                temp[count++] = a[j++];
 	            }
 	        }
-	        while(i < len_i && i < a.length){//×¢Òâ£ºÕâÀïiÒ²ÓÐ¿ÉÄÜ³¬¹ýÊý×é³¤¶È
+	        while(i < len_i && i < a.length){//æ³¨æ„ï¼šè¿™é‡Œiä¹Ÿæœ‰å¯èƒ½è¶…è¿‡æ•°ç»„é•¿åº¦
 	            temp[count++] = a[i++];
 	        }
 	        while(j < len_j && j < a.length){
