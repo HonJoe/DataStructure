@@ -1,7 +1,10 @@
 package com.datastructure.tree;
 
-import com.sun.org.apache.bcel.internal.generic.LMUL;
 
+/**
+ * 线段树
+ * @param <E>
+ */
 public class SegmentTree<E> {
 
     private E[] tree;

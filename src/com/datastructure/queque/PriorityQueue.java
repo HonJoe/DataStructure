@@ -3,7 +3,7 @@ package com.datastructure.queque;
 import com.datastructure.heap.MaxHeap;
 
 /**
- *
+ * 优先队列
  * @param <E>
  */
 public class PriorityQueue<E extends Comparable<E>> implements Queue<E> {
